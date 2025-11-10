@@ -1,65 +1,108 @@
 @import "tailwindcss";
 
-/* Variables y base */
-:root {
-  --font-heading: 'Inter';
-  --font-body: 'Inter';
+/* ==== Variables y base ==== */
+:root{
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  --bg: #FAF8F5;          /* marfil suave */
+  --ink: #0F1720;         /* petróleo */
+  --muted: rgba(15,23,32,.65);
+
+  --midnight: #0B1A34;    /* azul profundo */
+  --saffron:  #F59E0B;    /* azafrán */
+  --mint:     #10B981;    /* acento suave opcional */
+
+  --line: rgba(15,23,32,.12);
+  --card: #FFFFFF;
 }
 
 html, body, :root { height: 100%; }
 
-body {
-  background: #0b0f14;
-  color: white;
+.body-theme{
+  background: var(--bg);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-body);
 }
 
-/* Helpers simples sin @apply (v4-friendly) */
-.container-app {
-  max-width: 72rem;       /* ~max-w-6xl */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;     /* px-4 */
+/* contenedor */
+.container-app{
+  max-width: 1120px; /* ~max-w-5xl/6xl intermedio */
+  margin: 0 auto;
+  padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.card {
-  background: #11161d;
-  border-radius: 1rem;    /* rounded-2xl */
-  border: 1px solid rgba(31,42,55,0.5); /* border-[#1f2a37]/50 */
-  box-shadow:
-    0 0 0 1px rgba(34,211,238,0.25),
-    0 10px 30px rgba(34,211,238,0.12);
+/* tarjetas */
+.card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(11,26,52,.05);
 }
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 0.75rem;  /* rounded-xl */
-  background: #22d3ee;
-  padding: 0.75rem 1.25rem; /* px-5 py-3 */
-  font-weight: 600;
-  color: black;
-  transition: opacity .2s ease;
-}
-.btn-primary:hover { opacity: .9; }
-
-.section-title {
-  font-size: 1.875rem;     /* text-3xl */
-  line-height: 2.25rem;
+/* títulos */
+.section-title{
+  font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: -0.01em;
+  font-size: 2rem;
+  line-height: 1.15;
 }
-@media (min-width: 768px) {
-  .section-title {
-    font-size: 2.25rem;    /* md:text-4xl */
-    line-height: 2.5rem;
-  }
+@media (min-width: 768px){
+  .section-title{ font-size: 2.5rem; }
 }
 
-.section-subtitle {
+.section-subtitle{
+  color: var(--muted);
   font-size: 1rem;
-  color: rgba(255,255,255,.7);
 }
+
+/* botones */
+.btn{
+  display:inline-flex; align-items:center; gap:.5rem;
+  border-radius: 14px; padding:.75rem 1.1rem; font-weight: 600;
+  text-decoration:none;
+}
+.btn-primary{
+  background: var(--midnight);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(11,26,52,.25);
+  transition: transform .08s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.btn-primary:hover{ transform: translateY(-1px); }
+.btn-outline{
+  border:1px solid var(--line); color: var(--ink); background: transparent;
+}
+.btn-outline:hover{ background: rgba(11,26,52,.04); }
+
+/* “ribbon” de categoría */
+.ribbon{
+  display:inline-block; padding:.35rem .6rem;
+  border-radius: 999px; font-size:.8rem; font-weight:600;
+  background: rgba(245,158,11,.14);
+  color: var(--midnight);
+  border: 1px solid rgba(245,158,11,.35);
+}
+
+/* héroe patrón */
+.hero-shell{
+  border:1px solid var(--line); border-radius: 28px; overflow:hidden;
+  background:
+    radial-gradient(1200px 200px at 10% 0%, rgba(245,158,11,.12), transparent 60%),
+    linear-gradient(180deg, rgba(11,26,52,.03), transparent 50%),
+    #FFF;
+}
+
+/* encabezado minimal */
+.site-header{
+  position: sticky; top:0; z-index:50; backdrop-filter: blur(8px);
+  background: color-mix(in srgb, var(--bg) 88%, white 12%);
+  border-bottom: 1px solid var(--line);
+}
+.nav-link{
+  color: var(--muted); font-weight: 600; text-decoration: none;
+}
+.nav-link:hover{ color: var(--ink); }

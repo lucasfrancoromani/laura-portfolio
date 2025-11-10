@@ -1,43 +1,58 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 export const Hero = () => {
   return (
-    <section className="relative overflow-hidden rounded-3xl border border-[#1f2a37]/50 bg-gradient-to-br from-[#0f141a] via-[#11161d] to-[#0b0f14]">
-      <div className="grid md:grid-cols-2 gap-6 p-6 md:p-10">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col justify-center"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-            Laura Lambert
-            <span className="block text-[#22d3ee]">Periodista Deportiva</span>
+    <section className="hero-shell p-6 md:p-10">
+      <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <span className="ribbon">Cobertura • Entrevistas • Relato</span>
+          <h1
+            className="mt-4"
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontWeight: 800,
+              letterSpacing: "-0.02em",
+              fontSize: "clamp(2.2rem, 4.2vw, 3.6rem)",
+              lineHeight: 1.1,
+            }}
+          >
+            Historias que laten al ritmo del deporte.
           </h1>
-          <p className="mt-4 text-white/80 max-w-prose">
-            Cobertura, entrevistas y relatos con pasión por el deporte. Basada en Roma, con experiencia en radio, futsal
-            y eventos internacionales.
+          <p className="mt-4" style={{color:"var(--muted)"}}>
+            Soy Laura Lambert Cembellin, periodista deportiva y locutora. Actualmente en Roma, cuento el juego desde adentro:
+            entrevistas, coberturas y relatos que acercan la emoción de cada encuentro.
           </p>
           <div className="mt-6 flex items-center gap-3">
-            <Link href="/portfolio" className="btn-primary">Ver portfolio</Link>
-            <Link href="/contacto" className="inline-flex items-center rounded-xl px-5 py-3 border border-[#1f2a37]/60 hover:bg-white/5">
-              Contacto
-            </Link>
+            <Link href="/portfolio" className="btn btn-primary">Ver portfolio</Link>
+            <Link href="/contacto" className="btn btn-outline">Contacto</Link>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="relative h-64 md:h-auto"
-        >
-          <Image src="/laura-hero.jpg" alt="Laura Lambert" fill className="object-cover rounded-2xl" />
-          <div className="absolute inset-0 ring-1 ring-inset ring-[#1f2a37]/50 rounded-2xl" />
-        </motion.div>
+        <div className="relative">
+          <div
+            className="relative rounded-[22px] overflow-hidden"
+            style={{ border: "1px solid var(--line)", boxShadow:"0 10px 30px rgba(11,26,52,.12)" }}
+          >
+            <Image
+              src="/laura-hero.png"
+              alt="Laura Lambert entrevistando"
+              width={1200}
+              height={800}
+              className="w-full h-auto object-cover"
+              priority
+            />
+          </div>
+          <div
+            className="absolute -bottom-3 left-3 md:left-6 px-3 py-1.5 rounded-full"
+            style={{ background:"#fff", border:"1px solid var(--line)", boxShadow:"0 6px 18px rgba(0,0,0,.08)" }}
+          >
+            <span style={{fontWeight:700, color:"var(--midnight)"}}>Roma</span>
+            <span style={{margin:"0 .35rem", color:"var(--muted)"}}>•</span>
+            <span style={{color:"var(--muted)"}}>Cobertura reciente</span>
+          </div>
+        </div>
       </div>
     </section>
   );

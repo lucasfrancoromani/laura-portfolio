@@ -6,19 +6,30 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Section title="Destacados" subtitle="Coberturas y entrevistas recientes">
+      <Section title="Destacados" subtitle="Selección reciente de coberturas y entrevistas">
         <Grid>
           <Card>
-            <h3 className="font-semibold">Cobertura Superclásico – Roma</h3>
-            <p className="text-sm text-white/70 mt-1">Previa Boca-River en Roma con corresponsal de C5N.</p>
+            <span className="ribbon">Cobertura</span>
+            <h3 className="mt-3" style={{fontWeight:700}}>Previa Boca–River en Roma</h3>
+            <p className="mt-1" style={{color:"var(--muted)"}}>
+              Con corresponsal de C5N: voces de la comunidad y el clima del superclásico en tierras italianas.
+            </p>
           </Card>
+
           <Card>
-            <h3 className="font-semibold">Relato – Futsal</h3>
-            <p className="text-sm text-white/70 mt-1">Narración en vivo de partidos de futsal.</p>
+            <span className="ribbon">Relato</span>
+            <h3 className="mt-3" style={{fontWeight:700}}>Partidos de Futsal</h3>
+            <p className="mt-1" style={{color:"var(--muted)"}}>
+              Highlights y fragmentos de narración: ritmo, emoción y análisis en tiempo real.
+            </p>
           </Card>
+
           <Card>
-            <h3 className="font-semibold">Entrevistas – Consulado de Boca</h3>
-            <p className="text-sm text-white/70 mt-1">Diálogos con miembros del consulado en Roma.</p>
+            <span className="ribbon">Entrevistas</span>
+            <h3 className="mt-3" style={{fontWeight:700}}>Consulado de Boca en Roma</h3>
+            <p className="mt-1" style={{color:"var(--muted)"}}>
+              Charlas con miembros del consulado: comunidad, organización y cultura futbolera.
+            </p>
           </Card>
         </Grid>
       </Section>

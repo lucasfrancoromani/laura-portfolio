@@ -5,7 +5,7 @@ export const Grid = ({ children }: { children: ReactNode }) => (
 );
 
 export const Card = ({ children }: { children: ReactNode }) => (
-  <div className="card p-5 hover:shadow-[0_0_0_1px_rgba(34,211,238,0.35),_0_12px_36px_rgba(34,211,238,0.18)] transition">
+  <article className="card p-5">
     {children}
-  </div>
+  </article>
 );
