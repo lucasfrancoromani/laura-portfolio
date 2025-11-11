@@ -3,15 +3,15 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/lib/site";
-import { Playfair_Display, Manrope } from "next/font/google";
+import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 
-const playfair = Playfair_Display({
+const display = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-heading",
 });
 
-const manrope = Manrope({
+const text = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-body",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className={`${playfair.variable} ${manrope.variable} body-theme`}>
+      <body className={`${display.variable} ${text.variable} darkneo`}>
         <Header />
         <main className="container-app py-10 md:py-16">{children}</main>
         <Footer />

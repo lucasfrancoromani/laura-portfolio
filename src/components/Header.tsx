@@ -12,10 +12,10 @@ export const Header = () => {
         <Link href="/" className="flex items-center gap-3">
           <img src="/logo-temp.svg" alt="Logo" className="h-9 w-9" />
           <div>
-            <div className="font-[700] tracking-tight" style={{fontFamily: "var(--font-heading)"}}>
+            <div className="tracking-tight" style={{fontFamily:"var(--font-heading)", fontWeight:800}}>
               {site.name}
             </div>
-            <div className="text-[12px]" style={{color: "var(--muted)"}}>{site.role}</div>
+            <div className="text-[12px] subtle">{site.role}</div>
           </div>
         </Link>
 
@@ -29,7 +29,7 @@ export const Header = () => {
         </nav>
 
         <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Abrir menú">
-          <Menu color="#0B1A34" />
+          <Menu color="#E6E8EF" />
         </button>
       </div>
 

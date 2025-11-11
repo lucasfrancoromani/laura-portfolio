@@ -1,39 +1,35 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { site } from "@/lib/site";
 
 export const Hero = () => {
   return (
     <section className="hero-shell p-6 md:p-10">
       <div className="grid md:grid-cols-2 gap-8 items-center">
         <div>
-          <span className="ribbon">Cobertura • Entrevistas • Relato</span>
-          <h1
-            className="mt-4"
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontWeight: 800,
-              letterSpacing: "-0.02em",
-              fontSize: "clamp(2.2rem, 4.2vw, 3.6rem)",
-              lineHeight: 1.1,
-            }}
-          >
-            Historias que laten al ritmo del deporte.
+          <span className="badge">Periodismo • Locución</span>
+          <h1 className="display-title mt-4" style={{fontSize: "clamp(2.2rem, 4.2vw, 3.6rem)"}}>
+            Voz, cámara y {""}
+            <span className="gradient-text">deporte en primera persona</span>.
           </h1>
-          <p className="mt-4" style={{color:"var(--muted)"}}>
-            Soy Laura Lambert Cembellin, periodista deportiva y locutora. Actualmente en Roma, cuento el juego desde adentro:
-            entrevistas, coberturas y relatos que acercan la emoción de cada encuentro.
+          <p className="mt-4 subtle">
+            Soy Laura Lambert, <strong>periodista deportiva y locutora</strong> con base en Roma. Entrevistas, coberturas,
+            relatos de futsal y contenidos para el canal <strong>{site.highlights.youtubeChannelName}</strong>.
           </p>
           <div className="mt-6 flex items-center gap-3">
             <Link href="/portfolio" className="btn btn-primary">Ver portfolio</Link>
-            <Link href="/contacto" className="btn btn-outline">Contacto</Link>
+            <Link href="/contacto" className="btn btn-ghost">Contacto</Link>
+            <Link href={site.socials.youtube} target="_blank" className="btn btn-ghost" aria-label="YouTube">
+              YouTube
+            </Link>
           </div>
         </div>
 
         <div className="relative">
           <div
             className="relative rounded-[22px] overflow-hidden"
-            style={{ border: "1px solid var(--line)", boxShadow:"0 10px 30px rgba(11,26,52,.12)" }}
+            style={{ border: "1px solid var(--line)", boxShadow:"0 10px 40px rgba(124,58,237,.25)" }}
           >
             <Image
               src="/laura-hero.png"
@@ -46,11 +42,11 @@ export const Hero = () => {
           </div>
           <div
             className="absolute -bottom-3 left-3 md:left-6 px-3 py-1.5 rounded-full"
-            style={{ background:"#fff", border:"1px solid var(--line)", boxShadow:"0 6px 18px rgba(0,0,0,.08)" }}
+            style={{ background:"color-mix(in srgb, var(--panel) 92%, black 8%)", border:"1px solid var(--line)", boxShadow:"0 8px 20px rgba(0,0,0,.35)" }}
           >
-            <span style={{fontWeight:700, color:"var(--midnight)"}}>Roma</span>
+            <span style={{fontWeight:800, color:"var(--ink)"}}>Roma</span>
             <span style={{margin:"0 .35rem", color:"var(--muted)"}}>•</span>
-            <span style={{color:"var(--muted)"}}>Cobertura reciente</span>
+            <span className="subtle">Cobertura reciente</span>
           </div>
         </div>
       </div>

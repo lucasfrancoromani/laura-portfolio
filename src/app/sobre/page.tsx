@@ -6,8 +6,8 @@ export default function SobrePage() {
       <Section title="Sobre mí" subtitle="Formación y enfoque">
         <article className="card p-6 md:p-8 grid gap-4">
           <p>
-            Soy <strong>Laura Lambert</strong>, periodista deportiva formada en la Universidad Nacional de La Plata.
-            Nací en Esquel, Chubut, y hoy estoy basada en Roma. Cubro el deporte desde una mirada humana:
+            Soy <strong>Laura Lambert Cembellin</strong>, periodista deportiva formada en la Universidad Nacional de La Plata.
+            Nací en Esquel, Chubut, y actualmente viviendo en Roma. Cubro el deporte desde una mirada humana:
             entrevistas, relatos y crónicas que acercan la emoción y el contexto detrás de cada encuentro.
           </p>
           <p>
