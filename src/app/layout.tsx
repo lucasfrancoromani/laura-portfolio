@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className={`${display.variable} ${text.variable} darkneo`}>
+      <body className={`${display.variable} ${text.variable}`}>
         <Header />
         <main className="container-app py-10 md:py-16">{children}</main>
         <Footer />

@@ -8,11 +8,11 @@ export const site = {
     { label: "Sobre mí", href: "/sobre" },
     { label: "Experiencia", href: "/experiencia" },
     { label: "Portfolio", href: "/portfolio" },
-    { label: "Contacto", href: "/contacto" },
+    { label: "Streaming", href: "/streaming" },
   ],
   socials: {
     instagram: "https://instagram.com/",
-    youtube: "https://youtube.com/", // Crónicas de un Viaje (colocá el link real)
+    youtube: "https://youtube.com/", // colocar link real
     linkedin: "https://linkedin.com/",
   },
   highlights: {
