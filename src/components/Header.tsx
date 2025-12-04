@@ -11,29 +11,14 @@ export const Header = () => {
   return (
     <header className="site-header">
       <div className="container-app py-4 flex items-center justify-between">
-        
-        {/* LOGO + NOMBRE */}
-        <Link href="/" className="flex items-center gap-3">
-          <img 
-            src="/logo-temp.svg" 
-            alt="Logo" 
-            className="h-9 w-9"
+
+        {/* LOGO GRANDE */}
+        <Link href="/" className="flex items-center">
+          <img
+            src="/logo-lau1.png"
+            alt="Logo Laura Lambert"
+            className="h-20 md:h-24 w-auto"
           />
-          <div>
-            <div 
-              className="tracking-tight"
-              style={{ 
-                fontFamily: "var(--font-heading)", 
-                fontWeight: 800,
-                fontSize: "1.05rem"
-              }}
-            >
-              {site.name}
-            </div>
-            <div className="text-[12px] subtle -mt-1">
-              {site.role}
-            </div>
-          </div>
         </Link>
 
         {/* NAV DESKTOP */}
@@ -41,7 +26,6 @@ export const Header = () => {
           {site.nav.map((item) => {
             const isStreaming = item.href === "/streaming";
 
-            // 🔴 STREAMING – estilo especial
             if (isStreaming) {
               return (
                 <Link
@@ -54,14 +38,12 @@ export const Header = () => {
                     color: "var(--accent)",
                   }}
                 >
-                  {/* PUNTITO LIVE */}
                   <span className="inline-block h-2 w-2 rounded-full bg-red-600 animate-pulse"></span>
                   Streaming
                 </Link>
               );
             }
 
-            // Resto de los links normales
             return (
               <Link key={item.href} href={item.href} className="nav-link">
                 {item.label}
@@ -69,17 +51,15 @@ export const Header = () => {
             );
           })}
 
-          {/* BOTÓN CONTACTO */}
           <Link
             href="/contacto"
-            className="btn btn-primary"
-            style={{ paddingTop: ".55rem", paddingBottom: ".55rem" }}
+            className="btn btn-primary px-4 py-2"
           >
             Contactar
           </Link>
         </nav>
 
-        {/* BOTÓN BURGER MOBILE */}
+        {/* MENÚ MOBILE */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden"
@@ -96,7 +76,6 @@ export const Header = () => {
           style={{ borderColor: "var(--line)" }}
         >
           <div className="container-app py-3 flex flex-col gap-3">
-
             {site.nav.map((item) => {
               const isStreaming = item.href === "/streaming";
 
